@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explora tu cuerpo | Cuidando tu salud</title>
+  <meta name="description" content="Explora en 3D tu columna vertebral y tu pie: toca cada vértebra, hueso o estructura y descubre qué hace, qué problemas son frecuentes y cómo cuidarla.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/explora.css">
+
+  <!-- Three.js se carga desde internet. Si se cambia de versión, cambiar ambas direcciones. -->
+  <script type="importmap">
+    { "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.1/examples/jsm/"
+    } }
+  </script>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/components.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script type="module" src="js/explora.js"></script>
+</head>
+<body data-pagina="explora">
+
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <div id="cabecera"></div>
+
+  <main id="contenido">
+
+    <!-- ============ PORTADA ============ -->
+    <section class="pagina-hero" aria-labelledby="titulo-pagina">
+      <span class="forma forma--turq" style="--t:12rem; top:-4rem; right:-2rem; opacity:.6" data-flota></span>
+      <span class="forma forma--sol" style="--t:3.5rem; bottom:20%; right:30%" data-flota></span>
+      <span class="forma forma--coral" style="--t:2.5rem; top:24%; right:48%" data-flota></span>
+
+      <div class="contenedor">
+        <div class="pagina-hero__contenido">
+          <nav class="migas" aria-label="Ruta" data-intro><a href="index.html">Inicio</a> <span aria-hidden="true">/</span> <span>Explora tu cuerpo</span></nav>
+          <h1 id="titulo-pagina" data-palabras>Explora tu cuerpo en 3D</h1>
+          <p data-intro>Gira, acerca y toca cada parte de la columna y del pie. Entiende qué te duele, por qué y cómo cuidarlo. Tu profesional también la usa en consulta para explicarte tu caso.</p>
+        </div>
+        <!-- IMAGEN DE LA PORTADA
+             Para cambiarla: reemplaza el archivo por otra imagen con el mismo nombre, o escribe el nombre
+             de tu foto en src="...". Tamaño recomendado: 1200 px de ancho (JPG o WebP, menos de 300 KB).
+             alt="..." describe la imagen. No borres data-intro-arte (es la animación de entrada).
+             El texto de la etiqueta flotante se cambia dentro de <span class="flotante ...">. -->
+        <div class="pagina-hero__arte pagina-hero__arte--ilustracion" data-parallax="-5">
+          <img src="assets/images/hero.svg" alt="Ilustración de una columna vertebral y una huella de pie" width="1200" height="900" data-intro-arte>
+          <span class="flotante pagina-hero__chip" data-flota><span data-icono="cuerpo"></span> Modelos 3D interactivos</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPLORADORES ============ -->
+    <section class="seccion seccion--ola" aria-labelledby="explora-titulo">
+      <div class="contenedor">
+        <h2 class="solo-lectores" id="explora-titulo">Modelos 3D</h2>
+
+        <div class="modelo-pestanas" role="tablist" aria-label="Elegir modelo">
+          <button class="modelo-pestana" type="button" role="tab" data-pestana-modelo="columna" aria-selected="true" aria-controls="explorador-columna" id="pestana-columna">
+            <span data-icono="columna"></span>
+            <span><strong>Columna vertebral</strong><small>Quiropraxia</small></span>
+          </button>
+          <button class="modelo-pestana modelo-pestana--pie" type="button" role="tab" data-pestana-modelo="pie" aria-selected="false" aria-controls="explorador-pie" id="pestana-pie" tabindex="-1">
+            <span data-icono="pie"></span>
+            <span><strong>Pie y tobillo</strong><small>Podología</small></span>
+          </button>
+        </div>
+
+        <div class="explorador-caja" id="explorador-columna" role="tabpanel" aria-labelledby="pestana-columna" data-explorador-panel="columna">
+          <div class="explorador" data-explorador="columna">
+            <noscript><p class="explorador__carga">Esta sección necesita JavaScript para mostrar el modelo 3D.</p></noscript>
+          </div>
+        </div>
+
+        <div class="explorador-caja" id="explorador-pie" role="tabpanel" aria-labelledby="pestana-pie" data-explorador-panel="pie" hidden>
+          <div class="explorador" data-explorador="pie"></div>
+        </div>
+
+        <p class="explora-nota">Los modelos son una representación simplificada para explicar. En consulta, tu profesional evalúa tu caso real.</p>
+      </div>
+    </section>
+
+    <!-- ============ CÓMO USARLO ============ -->
+    <section class="seccion" style="padding-top:0" aria-labelledby="uso-titulo">
+      <div class="contenedor">
+        <header class="seccion__cabecera seccion__cabecera--centro" data-reveal>
+          <h2 id="uso-titulo">Cómo sacarle provecho</h2>
+        </header>
+
+        <div class="bento" data-reveal-grupo>
+          <article class="bento__item bento__item--marea" data-tilt>
+            <span class="bento__icono" data-icono="mano"></span>
+            <h3>Gira y toca</h3>
+            <p>Arrastra para girar y toca una pieza para ver su ficha. Con dos dedos, o la rueda, acercas o alejas.</p>
+          </article>
+          <article class="bento__item bento__item--sol" data-tilt>
+            <span class="bento__icono" data-icono="objetivo"></span>
+            <h3>Elige una región</h3>
+            <p>Cada zona tiene su color. Filtra por región y la cámara se acerca sola.</p>
+          </article>
+          <article class="bento__item bento__item--noche" data-tilt>
+            <span class="bento__orbita" aria-hidden="true"></span>
+            <span class="bento__icono" data-icono="calendario"></span>
+            <h3>Marca tus molestias</h3>
+            <p>Marca las zonas que te duelen y envíanos la lista por WhatsApp.</p>
+          </article>
+          <article class="bento__item bento__item--aqua" data-tilt>
+            <span class="bento__icono" data-icono="usuarios"></span>
+            <h3>En consulta</h3>
+            <p>Tu profesional usa la pantalla completa para mostrarte tu caso.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LLAMADA FINAL ============ -->
+    <section class="seccion" style="padding-top:0" aria-labelledby="cta-titulo">
+      <div class="contenedor">
+        <div class="cta-final" data-reveal>
+          <span class="forma forma--sol" style="--t:7rem; top:-2rem; left:-2rem" data-flota></span>
+          <span class="forma forma--blanca" style="--t:9rem; bottom:-3rem; right:-2rem" data-flota></span>
+          <h2 id="cta-titulo">¿Ya sabes qué zona te molesta?</h2>
+          <p>Agenda tu evaluación y revisamos tu caso con calma.</p>
+          <div class="grupo-botones">
+            <a class="boton boton--whatsapp" href="#" data-wa="Hola, quiero agendar una evaluación."><span data-icono="whatsapp"></span> Escribir por WhatsApp</a>
+            <a class="boton boton--marino" href="servicios.html">Ver servicios</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="pie"></div>
+</body>
+</html>

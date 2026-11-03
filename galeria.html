@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galería | Cuidando tu salud</title>
+  <meta name="description" content="Conoce nuestro local, nuestros tratamientos y a nuestro equipo en imágenes.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <script src="js/config.js" defer></script>
+  <script src="js/components.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-pagina="galeria">
+
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <div id="cabecera"></div>
+
+  <main id="contenido">
+
+    <!-- ============ PORTADA ============ -->
+    <section class="pagina-hero" aria-labelledby="titulo-pagina">
+      <span class="forma forma--coral" style="--t:13rem; top:-5rem; right:-2rem; opacity:.6" data-flota></span>
+      <span class="forma forma--sol" style="--t:3.5rem; bottom:22%; right:28%" data-flota></span>
+      <span class="forma forma--turq" style="--t:2.5rem; top:20%; right:46%" data-flota></span>
+
+      <div class="contenedor">
+        <div class="pagina-hero__contenido">
+          <nav class="migas" aria-label="Ruta" data-intro><a href="index.html">Inicio</a> <span aria-hidden="true">/</span> <span>Galería</span></nav>
+          <h1 id="titulo-pagina" data-palabras>Un lugar pensado para tu bienestar</h1>
+          <p data-intro>Recorre nuestro local, mira cómo trabajamos y conoce a quienes te atenderán.</p>
+        </div>
+        <!-- IMAGEN DE LA PORTADA
+             Para cambiarla: reemplaza el archivo por otra imagen con el mismo nombre, o escribe el nombre
+             de tu foto en src="...". Tamaño recomendado: 1200 px de ancho (JPG o WebP, menos de 300 KB).
+             alt="..." describe la imagen. No borres data-intro-arte (es la animación de entrada).
+             El texto de la etiqueta flotante se cambia dentro de <span class="flotante ...">. -->
+        <div class="pagina-hero__arte" data-parallax="-5">
+          <img src="assets/images/portada.jpg" alt="Fachada del policlínico Cuidando tu salud" width="1200" height="900" data-intro-arte>
+          <span class="flotante pagina-hero__chip" data-flota><span data-icono="pin"></span> Nuestro local</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERÍA ============ -->
+    <section class="seccion seccion--ola" aria-labelledby="galeria-titulo">
+      <div class="contenedor">
+        <h2 class="solo-lectores" id="galeria-titulo">Imágenes</h2>
+
+        <div class="filtros chips" data-filtros="galeria" data-aviso="aviso-filtro" role="group" aria-label="Filtrar imágenes">
+          <button class="chip" type="button" data-filtro="todos" aria-pressed="true">Todas</button>
+          <button class="chip" type="button" data-filtro="local" aria-pressed="false">El local</button>
+          <button class="chip" type="button" data-filtro="tratamientos" aria-pressed="false">Tratamientos</button>
+          <button class="chip" type="button" data-filtro="equipo" aria-pressed="false">Equipo</button>
+        </div>
+        <p class="solo-lectores" id="aviso-filtro" aria-live="polite"></p>
+
+        <!-- EDITAR: estas son ilustraciones de ejemplo. Para usar tus fotos, guárdalas en assets/images/galeria/
+             y cambia data-src y el src de la imagen en cada botón. -->
+        <div class="galeria" id="galeria" data-galeria data-entrada="foto--entra" data-reveal-grupo>
+          <button class="foto foto--ancha" type="button" data-categoria="local" data-src="assets/images/galeria/recepcion.svg" data-titulo="Nuestra recepción" data-alt="Ilustración de la recepción del policlínico">
+            <img src="assets/images/galeria/recepcion.svg" alt="Ilustración de la recepción del policlínico" loading="lazy">
+            <span class="foto__pie">Nuestra recepción</span>
+          </button>
+          <button class="foto" type="button" data-categoria="local" data-src="assets/images/galeria/consultorio.svg" data-titulo="Consultorio de quiropraxia" data-alt="Ilustración del consultorio de quiropraxia">
+            <img src="assets/images/galeria/consultorio.svg" alt="Ilustración del consultorio de quiropraxia" loading="lazy">
+            <span class="foto__pie">Consultorio de quiropraxia</span>
+          </button>
+          <button class="foto foto--alta" type="button" data-categoria="local" data-src="assets/images/galeria/podologia.svg" data-titulo="Sala de podología" data-alt="Ilustración de la sala de podología">
+            <img src="assets/images/galeria/podologia.svg" alt="Ilustración de la sala de podología" loading="lazy">
+            <span class="foto__pie">Sala de podología</span>
+          </button>
+          <button class="foto" type="button" data-categoria="local" data-src="assets/images/galeria/espera.svg" data-titulo="Sala de espera" data-alt="Ilustración de la sala de espera">
+            <img src="assets/images/galeria/espera.svg" alt="Ilustración de la sala de espera" loading="lazy">
+            <span class="foto__pie">Sala de espera</span>
+          </button>
+          <button class="foto" type="button" data-categoria="tratamientos" data-src="assets/images/galeria/ajuste.svg" data-titulo="Ajuste de columna" data-alt="Ilustración de un ajuste de columna">
+            <img src="assets/images/galeria/ajuste.svg" alt="Ilustración de un ajuste de columna" loading="lazy">
+            <span class="foto__pie">Ajuste de columna</span>
+          </button>
+          <button class="foto" type="button" data-categoria="tratamientos" data-src="assets/images/galeria/pie.svg" data-titulo="Tratamiento de pies" data-alt="Ilustración de un tratamiento de pies">
+            <img src="assets/images/galeria/pie.svg" alt="Ilustración de un tratamiento de pies" loading="lazy">
+            <span class="foto__pie">Tratamiento de pies</span>
+          </button>
+          <button class="foto foto--ancha" type="button" data-categoria="tratamientos" data-src="assets/images/galeria/molde.svg" data-titulo="Estudio de pisada" data-alt="Ilustración del estudio de pisada">
+            <img src="assets/images/galeria/molde.svg" alt="Ilustración del estudio de pisada" loading="lazy">
+            <span class="foto__pie">Estudio de pisada</span>
+          </button>
+          <button class="foto foto--ancha" type="button" data-categoria="equipo" data-src="assets/images/galeria/equipo.svg" data-titulo="Nuestro equipo" data-alt="Ilustración del equipo del policlínico">
+            <img src="assets/images/galeria/equipo.svg" alt="Ilustración del equipo del policlínico" loading="lazy">
+            <span class="foto__pie">Nuestro equipo</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LLAMADA FINAL ============ -->
+    <section class="seccion" style="padding-top:0" aria-labelledby="cta-titulo">
+      <div class="contenedor">
+        <div class="cta-final" data-reveal>
+          <span class="forma forma--sol" style="--t:7rem; top:-2rem; left:-2rem" data-flota></span>
+          <span class="forma forma--blanca" style="--t:9rem; bottom:-3rem; right:-2rem" data-flota></span>
+          <h2 id="cta-titulo">Ven a conocernos</h2>
+          <p>Agenda una visita y recorre el policlínico con nosotros.</p>
+          <div class="grupo-botones">
+            <a class="boton boton--whatsapp" href="#" data-wa="Hola, quiero agendar una cita."><span data-icono="whatsapp"></span> Escribir por WhatsApp</a>
+            <a class="boton boton--marino" href="contacto.html">Cómo llegar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Visor de imágenes (lo controla js/main.js) -->
+  <dialog class="visor" id="visor" aria-label="Visor de imágenes">
+    <figure>
+      <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
+      <figcaption></figcaption>
+    </figure>
+    <button class="visor__boton visor__cerrar" type="button" aria-label="Cerrar"><span data-icono="cerrar"></span></button>
+    <button class="visor__boton visor__ant" type="button" aria-label="Imagen anterior"><span data-icono="izq"></span></button>
+    <button class="visor__boton visor__sig" type="button" aria-label="Imagen siguiente"><span data-icono="der"></span></button>
+  </dialog>
+
+  <div id="pie"></div>
+</body>
+</html>

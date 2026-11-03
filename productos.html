@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Productos | Cuidando tu salud</title>
+  <meta name="description" content="Productos recomendados por nuestros especialistas para el cuidado de tus pies y tu espalda. Pídelos por WhatsApp.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/tienda.css">
+
+  <script src="js/config.js" defer></script>
+  <script src="js/components.js" defer></script>
+  <script src="js/productos-datos.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/tienda.js" defer></script>
+</head>
+<body data-pagina="productos">
+
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <div id="cabecera"></div>
+
+  <main id="contenido">
+
+    <!-- ============ PORTADA ============ -->
+    <section class="pagina-hero pagina-hero--sol" aria-labelledby="titulo-pagina">
+      <span class="forma forma--blanca" style="--t:15rem; top:-6rem; right:-3rem" data-flota></span>
+      <span class="forma forma--marino" style="--t:5rem; bottom:22%; right:24%" data-flota></span>
+      <span class="forma forma--turq" style="--t:3rem; top:20%; right:42%" data-flota></span>
+
+      <div class="contenedor">
+        <div class="pagina-hero__contenido">
+          <nav class="migas" aria-label="Ruta" data-intro><a href="index.html">Inicio</a> <span aria-hidden="true">/</span> <span>Productos</span></nav>
+          <h1 id="titulo-pagina" data-palabras>Para cuidarte también en casa</h1>
+          <p data-intro>Productos que recomendamos a nuestros pacientes. Haz tu pedido por WhatsApp, te confirmamos disponibilidad y lo recoges en el policlínico o te lo enviamos a todo el Perú con Shalom.</p>
+        </div>
+        <!-- IMAGEN DE LA PORTADA
+             Para cambiarla: reemplaza el archivo por otra imagen con el mismo nombre, o escribe el nombre
+             de tu foto en src="...". Tamaño recomendado: 1200 px de ancho (JPG o WebP, menos de 300 KB).
+             alt="..." describe la imagen. No borres data-intro-arte (es la animación de entrada).
+             El texto de la etiqueta flotante se cambia dentro de <span class="flotante ...">. -->
+        <div class="pagina-hero__arte pagina-hero__arte--ilustracion" data-parallax="-5">
+          <img src="assets/images/productos/plantillas.svg" alt="Ilustración de plantillas ortopédicas" width="1200" height="900" data-intro-arte>
+          <span class="flotante pagina-hero__chip" data-flota><span data-icono="camion"></span> Envíos a todo el Perú</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TIENDA ============ -->
+    <!-- EDITAR: los productos se cambian en js/productos-datos.js -->
+    <section class="seccion seccion--ola" aria-labelledby="catalogo-titulo">
+      <div class="contenedor">
+        <h2 class="solo-lectores" id="catalogo-titulo">Tienda</h2>
+
+        <ul class="garantias" data-reveal-grupo>
+          <li><span data-icono="escudo"></span><div><strong>Productos recomendados</strong><span>Los usamos con nuestros pacientes</span></div></li>
+          <li><span data-icono="camion"></span><div><strong>Envíos a todo el Perú</strong><span>Con Shalom, incluido en el precio</span></div></li>
+          <li><span data-icono="corazon"></span><div><strong>Te asesoramos</strong><span>Te decimos cuál te conviene</span></div></li>
+        </ul>
+
+        <div class="tienda">
+          <details class="tienda__lateral" open>
+            <summary>Filtros</summary>
+            <div class="tienda__filtros">
+              <div class="filtro-bloque">
+                <h3>Categoría</h3>
+                <ul class="categorias" id="lista-categorias"></ul>
+              </div>
+              <div class="filtro-bloque">
+                <h3><label for="precio-max">Precio máximo</label></h3>
+                <output id="precio-salida" class="precio-salida" for="precio-max"></output>
+                <input type="range" id="precio-max" min="0" max="200" step="5" value="200">
+              </div>
+              <div class="filtro-bloque">
+                <label class="interruptor"><input type="checkbox" id="solo-oferta"><span>Solo ofertas</span></label>
+                <label class="interruptor"><input type="checkbox" id="solo-stock"><span>Solo disponibles</span></label>
+              </div>
+              <button class="limpiar" type="button" id="limpiar" hidden>Limpiar filtros</button>
+            </div>
+          </details>
+
+          <div class="tienda__principal">
+            <div class="tienda__barra">
+              <div class="buscador">
+                <label class="solo-lectores" for="buscar">Buscar productos</label>
+                <span data-icono="lupa"></span>
+                <input id="buscar" type="search" placeholder="Buscar: plantillas, crema, faja…" autocomplete="off">
+              </div>
+              <div class="ordenar">
+                <label for="ordenar">Ordenar</label>
+                <select id="ordenar">
+                  <option value="relevancia">Destacados</option>
+                  <option value="precio-menor">Precio: menor a mayor</option>
+                  <option value="precio-mayor">Precio: mayor a menor</option>
+                  <option value="valoracion">Mejor valorados</option>
+                  <option value="nombre">Nombre (A–Z)</option>
+                </select>
+              </div>
+            </div>
+            <p class="tienda__contador" id="contador" aria-live="polite"></p>
+
+            <div class="productos-rejilla" id="productos"></div>
+
+            <div class="tienda__vacia" id="tienda-vacia" hidden>
+              <span class="panel__icono" data-icono="lupa"></span>
+              <h3>No encontramos productos con esos filtros</h3>
+              <p>Prueba con otra palabra o quita algún filtro.</p>
+              <button class="boton boton--chico" type="button" id="vaciar-filtros">Limpiar filtros</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ============ ENVÍOS A TODO EL PERÚ (SHALOM) ============ -->
+    <section class="seccion" style="padding-top:0" aria-label="Envíos a todo el Perú">
+      <div class="contenedor">
+        <div data-envios></div>
+      </div>
+    </section>
+
+    <!-- ============ AYUDA PARA ELEGIR ============ -->
+    <section class="seccion" style="padding-top:0" aria-labelledby="ayuda-titulo">
+      <div class="contenedor">
+        <div class="ayuda-producto" data-reveal>
+          <span class="forma forma--blanca" style="--t:9rem; top:-3rem; right:30%" data-flota></span>
+          <div>
+            <h2 id="ayuda-titulo">¿No sabes cuál elegir?</h2>
+            <p>Cuéntanos qué te molesta y te recomendamos el producto adecuado para tu caso.</p>
+          </div>
+          <div class="grupo-botones">
+            <a class="boton boton--marino" href="#" data-wa="Hola, necesito ayuda para elegir un producto."><span data-icono="whatsapp"></span> Pedir recomendación</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="pie"></div>
+</body>
+</html>

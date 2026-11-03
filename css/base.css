@@ -1,0 +1,238 @@
+/* ==========================================================================
+   Cuidando tu salud - Base
+   Identidad "Marea viva": gradientes turquesa y azul, acentos coral y sol,
+   azul marino para el texto.
+   Índice:
+   1. Variables (colores, tipografías, medidas)
+   2. Reset y base
+   3. Tipografía
+   4. Layout
+   5. Botones
+   6. Utilidades
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. VARIABLES  (cambia aquí la identidad de todo el sitio)
+   ========================================================================== */
+:root {
+  /* Colores */
+  --marino: #0b2b45;
+  --marino-2: #145a7a;
+  --turquesa: #0fb5a8;
+  --turquesa-osc: #087a71;
+  --azul: #2d9cdb;
+  --aqua: #d9f4f0;
+  --cielo: #e9f7ff;
+  --coral: #ff6f59;
+  --coral-osc: #d9492f;
+  --sol: #ffc53d;
+  --crema: #fff8ec;
+  --blanco: #ffffff;
+  --texto: #12303f;
+  --texto-suave: #48636f;
+  --borde: #cfe6ea;
+  --whatsapp: #1fa855;
+  --whatsapp-osc: #158040;
+
+  /* Degradados */
+  --grad-marea: linear-gradient(135deg, #0fb5a8 0%, #2d9cdb 100%);
+  --grad-sol: linear-gradient(135deg, #ff6f59 0%, #ffc53d 100%);
+  --grad-noche: linear-gradient(160deg, #0b2b45 0%, #145a7a 100%);
+  --grad-suave: linear-gradient(180deg, #e9f7ff 0%, #d9f4f0 100%);
+
+  /* Tipografías */
+  --fuente-titulos: "Sora", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fuente-texto: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Escala de tamaños */
+  --texto-base: 1.0625rem;
+  --texto-chico: 0.9375rem;
+  --titulo-hero: clamp(2.5rem, 6.2vw, 4.75rem);
+  --titulo-1: clamp(2.25rem, 5vw, 3.5rem);
+  --titulo-2: clamp(1.75rem, 3.6vw, 2.75rem);
+  --titulo-3: 1.375rem;
+
+  /* Medidas */
+  --ancho-max: 76rem;
+  --altura-cabecera: 4.75rem;
+  --espacio-seccion: clamp(4.5rem, 9vw, 8rem);
+  --radio: 1.25rem;
+  --radio-grande: 2rem;
+  --sombra: 0 18px 40px rgba(11, 43, 69, 0.12);
+  --sombra-chica: 0 8px 20px rgba(11, 43, 69, 0.1);
+
+  /* Movimiento */
+  --curva: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* ==========================================================================
+   2. RESET Y BASE
+   ========================================================================== */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--altura-cabecera) + 1rem);
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  font-size: var(--texto-base);
+  line-height: 1.65;
+  color: var(--texto);
+  background: var(--blanco);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img, svg, picture { display: block; max-width: 100%; }
+img { height: auto; }
+
+ul, ol, dl, dd, figure { margin: 0; padding: 0; }
+ul { list-style: none; }
+
+a { color: inherit; }
+button { font: inherit; color: inherit; cursor: pointer; }
+
+:focus-visible {
+  outline: 3px solid var(--marino);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.saltar {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 300;
+  padding: 0.7rem 1.1rem;
+  color: #fff;
+  background: var(--marino);
+  border-radius: 999px;
+}
+.saltar:focus { top: 1rem; }
+
+
+/* ==========================================================================
+   3. TIPOGRAFÍA
+   ========================================================================== */
+h1, h2, h3, h4 {
+  margin: 0;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--marino);
+  text-wrap: balance;
+}
+h1 { font-size: var(--titulo-1); }
+h2 { font-size: var(--titulo-2); }
+h3 { font-size: var(--titulo-3); letter-spacing: -0.01em; }
+
+p { margin: 0 0 1em; max-width: 64ch; }
+
+.texto-suave { color: var(--texto-suave); }
+.texto-grande { font-size: 1.1875rem; color: var(--texto-suave); }
+
+
+/* ==========================================================================
+   4. LAYOUT
+   ========================================================================== */
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-max);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.seccion {
+  position: relative;
+  padding-block: var(--espacio-seccion);
+}
+
+.seccion__cabecera { max-width: 46rem; margin-bottom: 3rem; }
+.seccion__cabecera p { margin-top: 1rem; }
+.seccion__cabecera--centro { margin-inline: auto; text-align: center; }
+.seccion__cabecera--centro p { margin-inline: auto; }
+
+@media (min-width: 48rem) {
+  .contenedor { padding-inline: 2rem; }
+}
+
+
+/* ==========================================================================
+   5. BOTONES
+   ========================================================================== */
+.boton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.95rem 1.7rem;
+  font: 700 1rem/1.2 var(--fuente-texto);
+  text-decoration: none;
+  color: var(--marino);
+  background: var(--grad-sol);
+  border: 0;
+  border-radius: 999px;
+  box-shadow: 0 10px 22px rgba(255, 111, 89, 0.35);
+  cursor: pointer;
+  transition: transform 0.25s var(--curva), box-shadow 0.25s var(--curva), background-color 0.25s;
+}
+.boton:hover { transform: translateY(-3px); box-shadow: 0 16px 28px rgba(255, 111, 89, 0.45); }
+.boton:active { transform: translateY(0) scale(0.98); }
+
+.boton svg { width: 1.2rem; height: 1.2rem; transition: transform 0.25s var(--curva); }
+.boton:hover svg { transform: translateX(3px); }
+
+.boton--marino { color: #fff; background: var(--marino); box-shadow: 0 10px 22px rgba(11, 43, 69, 0.3); }
+.boton--marino:hover { box-shadow: 0 16px 28px rgba(11, 43, 69, 0.4); }
+
+.boton--borde {
+  color: var(--marino);
+  background: transparent;
+  box-shadow: inset 0 0 0 2px var(--marino);
+}
+.boton--borde:hover { color: #fff; background: var(--marino); box-shadow: inset 0 0 0 2px var(--marino); }
+
+.boton--claro { color: var(--marino); background: #fff; box-shadow: 0 10px 22px rgba(11, 43, 69, 0.18); }
+
+.boton--whatsapp { color: #fff; background: var(--whatsapp); box-shadow: 0 10px 22px rgba(31, 168, 85, 0.35); }
+.boton--whatsapp:hover { background: var(--whatsapp-osc); box-shadow: 0 16px 28px rgba(31, 168, 85, 0.45); }
+.boton--whatsapp:hover svg { transform: none; }
+
+.boton--chico { padding: 0.65rem 1.25rem; font-size: var(--texto-chico); }
+.boton--ancho { width: 100%; }
+
+.grupo-botones { display: flex; flex-wrap: wrap; gap: 0.85rem; }
+
+
+/* ==========================================================================
+   6. UTILIDADES
+   ========================================================================== */
+.solo-lectores {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Íconos (los dibuja components.js con data-icono="nombre") */
+svg.i {
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+[data-icono] { display: inline-grid; place-items: center; flex: none; }

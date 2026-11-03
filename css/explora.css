@@ -1,0 +1,288 @@
+/* ==========================================================================
+   Cuidando tu salud - Explora tu cuerpo (página explora.html)
+   Índice:
+   1. Pestañas de modelo
+   2. Explorador (escena, regiones, controles)
+   3. Panel de información
+   4. Lista de piezas y zonas marcadas
+   5. Pantalla completa
+   6. Escritorio
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. PESTAÑAS DE MODELO
+   ========================================================================== */
+.modelo-pestanas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem; }
+.modelo-pestana {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.9rem 1.1rem;
+  text-align: left;
+  font: inherit;
+  color: var(--marino);
+  background: #fff;
+  border: 2px solid var(--borde);
+  border-radius: var(--radio);
+  cursor: pointer;
+  transition: transform 0.3s var(--curva), border-color 0.3s, background 0.3s, box-shadow 0.3s;
+}
+.modelo-pestana:hover { transform: translateY(-3px); border-color: var(--turquesa); box-shadow: var(--sombra-chica); }
+.modelo-pestana > span:first-child {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  background: var(--aqua);
+  border-radius: 50%;
+}
+.modelo-pestana svg { width: 1.5rem; height: 1.5rem; }
+.modelo-pestana strong { display: block; font-family: var(--fuente-titulos); font-size: 1.0625rem; line-height: 1.2; }
+.modelo-pestana small { font-size: 0.875rem; font-weight: 600; color: var(--texto-suave); }
+.modelo-pestana--pie > span:first-child { background: #ffd2c9; }
+.modelo-pestana[aria-selected="true"] { color: #fff; background: var(--grad-noche); border-color: var(--marino); box-shadow: var(--sombra); }
+.modelo-pestana[aria-selected="true"] small { color: rgba(255, 255, 255, 0.8); }
+.modelo-pestana[aria-selected="true"] > span:first-child { background: var(--sol); color: var(--marino); }
+.modelo-pestana:focus-visible { outline: 3px solid var(--sol); outline-offset: 3px; }
+
+.explora-nota { margin: 1.5rem 0 0; text-align: center; font-size: var(--texto-chico); color: var(--texto-suave); }
+
+
+/* ==========================================================================
+   2. EXPLORADOR
+   ========================================================================== */
+.explorador { display: grid; gap: 1.25rem; grid-template-columns: minmax(0, 1fr); }
+
+.explorador__escena {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(15, 181, 168, 0.5), transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(255, 111, 89, 0.32), transparent 45%),
+    var(--grad-noche);
+  border-radius: var(--radio-grande);
+  box-shadow: var(--sombra);
+}
+.explorador__lienzo { width: 100%; height: clamp(26rem, 118vw, 40rem); outline: none; }
+.explorador__lienzo canvas { display: block; cursor: grab; touch-action: none; }
+.explorador__lienzo canvas:active { cursor: grabbing; }
+.explorador__lienzo:focus-visible { box-shadow: inset 0 0 0 3px var(--sol); border-radius: var(--radio-grande); }
+.explorador--sin3d .explorador__escena { min-height: 12rem; display: grid; place-items: center; }
+
+.explorador__carga { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; padding: 2rem; text-align: center; font-weight: 700; color: #fff; pointer-events: none; }
+.explorador__carga[hidden] { display: none; }
+.explorador--sin3d .explorador__carga { position: static; }
+
+.explorador__etiqueta {
+  position: absolute;
+  z-index: 4;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--marino);
+  white-space: nowrap;
+  background: #fff;
+  border-radius: 999px;
+  box-shadow: var(--sombra-chica);
+  pointer-events: none;
+}
+
+/* Regiones (arriba, con desplazamiento lateral en celular) */
+.explorador__regiones {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  right: 0.75rem;
+  z-index: 3;
+  display: flex;
+  gap: 0.4rem;
+  padding-bottom: 0.25rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.explorador__regiones::-webkit-scrollbar { display: none; }
+.region {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  font: 700 0.875rem/1.2 var(--fuente-texto);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: transform 0.25s var(--curva), background 0.25s, color 0.25s;
+}
+.region i { width: 0.7rem; height: 0.7rem; background: var(--c, #fff); border-radius: 50%; box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.55); }
+.region small { display: none; font-weight: 500; opacity: 0.8; }
+.region:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.26); }
+.region[aria-pressed="true"] { color: var(--marino); background: #fff; }
+.region:focus-visible { outline: 3px solid var(--sol); outline-offset: 2px; }
+
+/* Controles (abajo a la derecha) */
+.explorador__controles {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 2.75rem;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.control {
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  font: 700 1.35rem/1 var(--fuente-texto);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: transform 0.25s var(--curva), background 0.25s, color 0.25s;
+}
+.control[hidden] { display: none; }
+.control svg { width: 1.2rem; height: 1.2rem; }
+.control:hover { transform: scale(1.12); color: var(--marino); background: #fff; }
+.control:focus-visible { outline: 3px solid var(--sol); outline-offset: 2px; }
+.explorador__ayuda { position: absolute; left: 1rem; right: 4.5rem; bottom: 0.7rem; z-index: 2; margin: 0; font-size: 0.8125rem; color: rgba(255, 255, 255, 0.82); pointer-events: none; }
+
+
+/* ==========================================================================
+   3. PANEL DE INFORMACIÓN
+   ========================================================================== */
+.explorador__panel { min-width: 0; padding: clamp(1.25rem, 3vw, 2rem); background: #fff; border-radius: var(--radio-grande); box-shadow: var(--sombra); }
+.panel { --c: var(--turquesa); animation: abrir 0.4s var(--curva); }
+.panel--vacio { text-align: center; }
+.panel__icono { display: inline-grid; place-items: center; width: 4rem; height: 4rem; margin-bottom: 0.75rem; color: var(--marino); background: var(--aqua); border-radius: 50%; }
+.panel__icono svg { width: 2rem; height: 2rem; }
+.panel h3 { margin: 0.4rem 0 0.75rem; font-size: 1.5rem; }
+.panel__region { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.25rem 0.8rem; font-size: 0.8125rem; font-weight: 800; color: var(--marino); background: color-mix(in srgb, var(--c) 28%, #fff); border-radius: 999px; }
+.panel__region i { width: 0.65rem; height: 0.65rem; background: var(--c); border-radius: 50%; }
+
+.panel__leyenda { display: grid; gap: 0.5rem; margin: 1.25rem 0; padding: 0; list-style: none; text-align: left; }
+.panel__leyenda li { display: flex; align-items: center; gap: 0.6rem; }
+.panel__leyenda i { width: 0.9rem; height: 0.9rem; border-radius: 50%; }
+.panel__leyenda span { color: var(--texto-suave); font-size: var(--texto-chico); }
+
+.panel__nav { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+.mini {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.8rem;
+  font: 700 0.8125rem/1 var(--fuente-texto);
+  color: var(--marino);
+  background: var(--cielo);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s var(--curva);
+}
+.mini svg { width: 0.9rem; height: 0.9rem; }
+.mini:hover { background: var(--aqua); transform: translateY(-2px); }
+
+.panel__pestanas { display: flex; gap: 0.25rem; padding: 0.25rem; margin-bottom: 1rem; background: var(--cielo); border-radius: 999px; }
+.pestana { flex: 1; padding: 0.5rem 0.4rem; font: 700 0.875rem/1.2 var(--fuente-texto); color: var(--texto-suave); background: transparent; border: 0; border-radius: 999px; cursor: pointer; transition: background 0.25s, color 0.25s; }
+.pestana[aria-selected="true"] { color: #fff; background: var(--marino); }
+.pestana:focus-visible { outline: 3px solid var(--turquesa); outline-offset: 2px; }
+
+.panel__cuerpo { animation: abrir 0.35s var(--curva); }
+.panel dl { margin: 0 0 1rem; }
+.panel dt { font-size: 0.8125rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--turquesa-osc); }
+.panel dd { margin: 0.1rem 0 0.8rem; }
+.panel h4 { margin: 0 0 0.5rem; font-size: 1rem; }
+.panel__cuerpo ul { display: grid; gap: 0.45rem; margin: 0 0 1rem; padding: 0; list-style: none; }
+.panel__cuerpo li { position: relative; padding-left: 1.4rem; font-size: var(--texto-chico); }
+.panel__cuerpo li::before { content: ""; position: absolute; left: 0; top: 0.5em; width: 0.7rem; height: 0.7rem; background: var(--c); border-radius: 50%; }
+
+.panel__acciones { display: grid; gap: 0.6rem; margin-top: 0.5rem; }
+.panel__acciones .boton { justify-content: center; }
+.panel__acciones [aria-pressed="true"] { color: #fff; background: var(--coral-osc); box-shadow: inset 0 0 0 2px var(--coral-osc); }
+.panel__aviso { margin: 1rem 0 0; font-size: 0.8125rem; color: var(--texto-suave); }
+
+
+/* ==========================================================================
+   4. LISTA DE PIEZAS Y ZONAS MARCADAS
+   ========================================================================== */
+.explorador__inferior { display: grid; gap: 1.25rem; min-width: 0; }
+.explorador__selector { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.pieza-boton {
+  padding: 0.4rem 0.75rem;
+  font: 700 0.8125rem/1.2 var(--fuente-texto);
+  color: var(--marino);
+  background: #fff;
+  border: 2px solid color-mix(in srgb, var(--c) 55%, #fff);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.25s var(--curva), background 0.25s;
+}
+.pieza-boton:hover { transform: translateY(-2px); background: color-mix(in srgb, var(--c) 18%, #fff); }
+.pieza-boton[aria-pressed="true"] { background: var(--c); border-color: var(--c); }
+.pieza-boton:focus-visible { outline: 3px solid var(--marino); outline-offset: 2px; }
+
+.explorador__marcas { padding: 1.25rem 1.5rem; background: #fff; border: 2px dashed var(--borde); border-radius: var(--radio); }
+.explorador__marcas h4 { margin: 0 0 0.6rem; }
+.marcas__vacio { margin: 0; font-size: var(--texto-chico); color: var(--texto-suave); }
+.marcas__lista { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.9rem; }
+.marca-chip { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.3rem 0.25rem 0.8rem; font-size: 0.875rem; font-weight: 700; color: var(--marino); background: #ffd2c9; border-radius: 999px; animation: abrir 0.3s var(--curva); }
+.marca-chip button { display: grid; place-items: center; width: 1.5rem; height: 1.5rem; padding: 0; color: var(--marino); background: rgba(255, 255, 255, 0.7); border: 0; border-radius: 50%; cursor: pointer; }
+.marca-chip svg { width: 0.85rem; height: 0.85rem; }
+.marca-chip button:hover { background: #fff; }
+
+
+/* ==========================================================================
+   5. PANTALLA COMPLETA (para explicar en consulta)
+   ========================================================================== */
+.explorador--completa {
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  height: 100%;
+  padding: 1rem;
+  overflow-y: auto;
+  background: var(--cielo);
+}
+.explorador--completa .explorador__lienzo { height: min(70vh, 48rem); }
+
+
+/* ==========================================================================
+   6. ESCRITORIO
+   ========================================================================== */
+@media (min-width: 40rem) {
+  .region small { display: inline; }
+  .explorador__lienzo { height: clamp(30rem, 62vw, 40rem); }
+}
+
+@media (min-width: 64rem) {
+  .explorador { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: start; }
+  .explorador__lienzo { height: 38rem; }
+  /* Sin "sticky": el panel se quedaba pegado y tapaba la lista y las zonas marcadas */
+  .explorador__panel { align-self: stretch; }
+  .explorador__inferior { grid-column: 1 / -1; grid-template-columns: 1.4fr 1fr; align-items: start; }
+  .explorador--completa { grid-template-columns: minmax(0, 1.5fr) minmax(22rem, 1fr); }
+  .explorador--completa .explorador__lienzo { height: calc(100vh - 2rem); }
+  .explorador--completa .explorador__panel { position: static; max-height: calc(100vh - 2rem); }
+  .explorador--completa .explorador__inferior { display: none; }
+}
+
+@media (max-width: 29.99rem) {
+  .modelo-pestana small { display: none; }
+  .modelo-pestana { padding: 0.7rem; gap: 0.6rem; }
+}
+
+html.sin-anim .panel,
+html.sin-anim .panel__cuerpo,
+html.sin-anim .marca-chip { animation: none; }
+html.sin-anim .region,
+html.sin-anim .control,
+html.sin-anim .mini,
+html.sin-anim .pieza-boton,
+html.sin-anim .modelo-pestana { transition: none; }

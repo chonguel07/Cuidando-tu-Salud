@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cuidando tu salud | Podología y quiropraxia</title>
+  <meta name="description" content="Policlínico de podología y quiropraxia. Cuidamos tus pies y tu espalda para que te muevas sin dolor. Agenda tu cita por WhatsApp.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <script src="js/config.js" defer></script>
+  <script src="js/components.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-pagina="inicio">
+
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <div id="cabecera"></div>
+
+  <main id="contenido">
+
+    <!-- ============ PORTADA ============ -->
+    <section class="hero-inicio" aria-labelledby="hero-titulo">
+      <span class="forma forma--sol" style="--t:5rem; top:10%; left:48%" data-flota></span>
+      <span class="forma forma--coral" style="--t:2.5rem; top:72%; left:6%" data-flota></span>
+      <span class="forma forma--turq" style="--t:3.5rem; top:8%; left:4%; opacity:.5" data-flota></span>
+
+      <div class="contenedor hero-inicio__fila">
+        <div>
+          <p class="insignia" data-intro><span data-icono="chispa"></span> Podología y quiropraxia en un solo lugar</p>
+          <h1 id="hero-titulo" data-palabras>Tus pies y tu espalda en <span class="texto-degradado">las mejores manos</span></h1>
+          <p class="texto-grande" data-intro>
+            Evaluamos, tratamos y te acompañamos hasta que vuelvas a caminar, trabajar y entrenar sin dolor.
+            <strong>Primera consulta con evaluación completa.</strong>
+          </p>
+          <div class="grupo-botones" data-intro>
+            <a class="boton" href="contacto.html">Agendar mi cita <span data-icono="flecha"></span></a>
+            <a class="boton boton--borde" href="servicios.html">Ver servicios</a>
+          </div>
+        </div>
+
+        <!-- ======================================================================
+             IMAGEN PRINCIPAL DE LA PORTADA
+             Para cambiarla: reemplaza el archivo assets/images/portada.jpg por otra foto
+             con el mismo nombre, o escribe el nombre de tu foto en src="...".
+             - Tamaño recomendado: 1400 px de ancho (JPG o WebP, menos de 300 KB).
+             - Cambia también el texto de alt="..." para describir la nueva foto.
+             - No borres data-intro-arte: es lo que hace la animación de entrada.
+             - El tamaño en pantalla se ajusta en css/pages.css, buscando ".hero-inicio__arte"
+               (max-width = ancho máximo en PC).
+             ====================================================================== -->
+        <div class="hero-inicio__arte" data-parallax="-6">
+          <img src="assets/images/portada.jpg" alt="Fachada del policlínico Cuidando tu salud: podología integral, acupuntura y quiroterapia" width="1000" height="750" data-intro-arte>
+          <!-- <span class="flotante flotante--pies"><span data-icono="pie"></span> Podología</span> -->
+          <!-- <span class="flotante flotante--espalda"><span data-icono="columna"></span> Quiropraxia</span> -->
+          <!-- <span class="flotante flotante--valoracion"><span data-icono="estrella"></span> 4,9 de valoración</span> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Cifras de ejemplo: cámbialas por las reales en data-contador -->
+    <div class="contenedor">
+      <div class="cifras" data-reveal-grupo>
+        <div class="cifra"><span class="cifra__numero" data-contador="10">10</span><span class="cifra__texto">Años de experiencia</span></div>
+        <div class="cifra"><span class="cifra__numero" data-contador="3000">3000</span><span class="cifra__texto">Pacientes atendidos</span></div>
+        <div class="cifra"><span class="cifra__numero" data-contador="4.9" data-decimales="1">4,9</span><span class="cifra__texto">Valoración promedio</span></div>
+        <div class="cifra"><span class="cifra__numero" data-contador="3">3</span><span class="cifra__texto">Profesionales</span></div>
+      </div>
+    </div>
+
+    <!-- ============ CINTA DE TRATAMIENTOS ============ -->
+    <section class="cinta-tratamientos" aria-label="Tratamientos que realizamos">
+      <div class="cinta" data-cinta>
+        <ul class="cinta__pista">
+          <li class="cinta__item"><span data-icono="pie"></span> Uñas encarnadas</li>
+          <li class="cinta__item"><span data-icono="columna"></span> Dolor lumbar</li>
+          <li class="cinta__item"><span data-icono="pie"></span> Callos y durezas</li>
+          <li class="cinta__item"><span data-icono="columna"></span> Ciática</li>
+          <li class="cinta__item"><span data-icono="pie"></span> Hongos en uñas</li>
+          <li class="cinta__item"><span data-icono="columna"></span> Dolor de cuello</li>
+          <li class="cinta__item"><span data-icono="pie"></span> Pie diabético</li>
+          <li class="cinta__item"><span data-icono="columna"></span> Postura</li>
+          <li class="cinta__item"><span data-icono="pie"></span> Plantillas a medida</li>
+          <li class="cinta__item"><span data-icono="columna"></span> Lesiones deportivas</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SERVICIOS DESTACADOS ============ -->
+    <section class="seccion" aria-labelledby="servicios-titulo">
+      <div class="contenedor">
+        <header class="seccion__cabecera" data-reveal>
+          <h2 id="servicios-titulo">Dos especialidades que se complementan</h2>
+          <p class="texto-grande">El bienestar de tu columna también comienza en tus pies. Por eso, integramos podología y quiropraxia
+            en un mismo espacio, ofreciendo una atención orientada al cuidado integral de tu salud.</p>
+        </header>
+
+        <div class="servicios-duo" data-reveal-grupo>
+          <article class="servicio-grande servicio-grande--pies">
+            <span class="servicio-grande__icono" data-icono="pie"></span>
+            <h3>Podología</h3>
+            <p>Cuidado clínico de tus pies, desde lo cotidiano hasta lo que necesita tratamiento.</p>
+            <ul>
+              <li><span data-icono="check"></span> Uñas encarnadas sin dolor</li>
+              <li><span data-icono="check"></span> Hongos, callos y durezas</li>
+              <li><span data-icono="check"></span> Pie diabético y plantillas</li>
+            </ul>
+            <a class="boton boton--marino" href="servicios.html#podologia">Ver podología <span data-icono="flecha"></span></a>
+          </article>
+
+          <article class="servicio-grande servicio-grande--espalda">
+            <span class="servicio-grande__icono" data-icono="columna"></span>
+            <h3>Quiropraxia</h3>
+            <p>Ajustes manuales y tratamiento para aliviar el dolor y devolverle movilidad a tu cuerpo.</p>
+            <ul>
+              <li><span data-icono="check"></span> Dolor de espalda y cuello</li>
+              <li><span data-icono="check"></span> Ciática y dolor lumbar</li>
+              <li><span data-icono="check"></span> Postura y lesiones deportivas</li>
+            </ul>
+            <a class="boton" href="servicios.html#quiropraxia">Ver quiropraxia <span data-icono="flecha"></span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUÉ PODEMOS ALIVIAR (bento) ============ -->
+    <section class="seccion" style="padding-top:0" aria-labelledby="bento-titulo">
+      <div class="contenedor">
+        <header class="seccion__cabecera seccion__cabecera--centro" data-reveal>
+          <h2 id="bento-titulo">Lo que podemos aliviar</h2>
+          <p class="texto-grande">Los motivos de consulta más comunes, de un vistazo.</p>
+        </header>
+
+        <div class="bento" data-reveal-grupo>
+          <article class="bento__item bento__item--grande bento__item--marea" data-tilt>
+            <span class="badge">Más consultado</span>
+            <span class="bento__icono" data-icono="columna"></span>
+            <h3>Dolor lumbar</h3>
+            <p>La zona baja de la espalda soporta casi todo tu día. Buscamos el origen del dolor y lo tratamos con ajustes y ejercicios simples.</p>
+            <a class="boton boton--marino" href="servicios.html#quiropraxia">Ver quiropraxia <span data-icono="flecha"></span></a>
+            <span class="bento__fondo" data-icono="columna"></span>
+          </article>
+
+          <article class="bento__item bento__item--sol" data-tilt>
+            <span class="bento__icono" data-icono="rayo"></span>
+            <h3>Ciática</h3>
+            <p>Dolor que baja por la pierna: lo evaluamos y lo aliviamos.</p>
+            <span class="bento__fondo" data-icono="rayo"></span>
+          </article>
+
+          <article class="bento__item bento__item--noche" data-tilt>
+            <span class="bento__orbita" aria-hidden="true"></span>
+            <span class="bento__icono" data-icono="usuarios"></span>
+            <span class="bento__numero"><span data-contador="3000">3000</span><small>+</small></span>
+            <p>Pacientes atendidos</p>
+          </article>
+
+          <article class="bento__item bento__item--aqua" data-tilt>
+            <span class="badge">Podología</span>
+            <h3>Uñas encarnadas</h3>
+            <p>Alivio rápido y sin dolor, con material esterilizado.</p>
+            <span class="bento__fondo" data-icono="pie"></span>
+          </article>
+
+          <article class="bento__item bento__item--crema" data-tilt>
+            <span class="bento__icono" data-icono="escudo"></span>
+            <h3>Pie diabético</h3>
+            <p>Revisiones periódicas para cuidar tu piel y tu circulación.</p>
+          </article>
+
+          <article class="bento__item bento__item--ancho bento__item--cielo" data-tilt>
+            <span class="badge">A medida</span>
+            <h3>Plantillas y estudio de la pisada</h3>
+            <p>Analizamos cómo caminas y diseñamos plantillas para tu pie. Mejoran la postura desde la base.</p>
+            <span class="bento__fondo" data-icono="objetivo"></span>
+          </article>
+
+          <article class="bento__item bento__item--coral" data-tilt>
+            <span class="bento__icono" data-icono="mano"></span>
+            <h3>Cuello y hombros</h3>
+            <p>Tensión de oficina y malas posturas.</p>
+          </article>
+
+          <article class="bento__item bento__item--marea" data-tilt>
+            <span class="estrellas" data-estrellas="5"></span>
+            <span class="bento__numero"><span data-contador="4.9" data-decimales="1">4,9</span><small>/5</small></span>
+            <p>Valoración de quienes nos visitan</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ POR QUÉ ELEGIRNOS ============ -->
+    <section class="seccion seccion--ola beneficios-fondo" aria-labelledby="beneficios-titulo">
+      <div class="contenedor">
+        <header class="seccion__cabecera seccion__cabecera--centro" data-reveal>
+          <h2 id="beneficios-titulo">Por qué nuestros pacientes vuelven</h2>
+          <p class="texto-grande">Una atención pensada para que entiendas qué te pasa y sientas mejoría real.</p>
+        </header>
+
+        <div class="beneficios" data-reveal-grupo>
+          <article class="beneficio">
+            <span class="beneficio__icono" data-icono="lupa"></span>
+            <h3>Evaluación completa</h3>
+            <p>Evaluamos tus pies, postura y columna para identificar tus necesidades y determinar la atención más adecuada.</p>
+          </article>
+          <article class="beneficio">
+            <span class="beneficio__icono" data-icono="corazon"></span>
+            <h3>Trato cercano</h3>
+            <p>Te explicamos todo con palabras claras y una atención adaptada a tus necesidades.</p>
+          </article>
+          <article class="beneficio">
+            <span class="beneficio__icono" data-icono="escudo"></span>
+            <h3>Higiene y seguridad</h3>
+            <p>Trabajamos con protocolos de higiene, instrumental esterilizado y materiales descartables cuando corresponde.</p>
+          </article>
+          <article class="beneficio">
+            <span class="beneficio__icono" data-icono="calendario"></span>
+            <h3>Seguimiento continuo</h3>
+            <p>Mantenemos comunicación después de tu consulta para conocer tu evolución y orientarte en tus cuidados.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ENVÍOS A TODO EL PERÚ (SHALOM) ============ -->
+    <!-- Se dibuja con js/components.js (plantillaEnvios). Textos de tiempo y alcance: js/config.js -->
+    <section class="seccion" style="padding-top:0" aria-label="Envíos a todo el Perú">
+      <div class="contenedor">
+        <div data-envios></div>
+      </div>
+    </section>
+
+    <!-- ============ EXPLORA TU CUERPO EN 3D ============ -->
+    <section class="seccion" style="padding-top:0" aria-labelledby="explora-titulo">
+      <div class="contenedor">
+        <div class="banner-3d" data-reveal>
+          <span class="forma forma--turq" style="--t:10rem; top:-3rem; right:8%; opacity:.45" data-flota></span>
+          <span class="forma forma--sol" style="--t:3.5rem; bottom:12%; right:30%" data-flota></span>
+          <div class="banner-3d__texto">
+            <span class="badge">Nuevo</span>
+            <h2 id="explora-titulo">Explora tu cuerpo en 3D</h2>
+            <p>Gira, acerca y toca cada vértebra o cada hueso del pie. Descubre qué hacen, qué problemas son comunes y cómo cuidarlos.</p>
+            <div class="grupo-botones">
+              <a class="boton boton--claro" href="explora.html#columna"><span data-icono="columna"></span> Ver la columna</a>
+              <a class="boton boton--borde-claro" href="explora.html#pie"><span data-icono="pie"></span> Ver el pie</a>
+            </div>
+          </div>
+          <div class="banner-3d__arte" aria-hidden="true">
+            <span class="banner-3d__disco banner-3d__disco--1"></span>
+            <span class="banner-3d__disco banner-3d__disco--2"></span>
+            <span class="banner-3d__disco banner-3d__disco--3"></span>
+            <span class="banner-3d__disco banner-3d__disco--4"></span>
+            <span class="banner-3d__disco banner-3d__disco--5"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CÓMO ES TU CONSULTA ============ -->
+    <section class="seccion" aria-labelledby="pasos-titulo">
+      <div class="contenedor">
+        <header class="seccion__cabecera" data-reveal>
+          <h2 id="pasos-titulo">Así es tu primera visita</h2>
+        </header>
+
+        <ol class="pasos" data-reveal-grupo>
+          <li class="paso"><div><h3>Escribes por WhatsApp</h3><p>Cuéntanos qué te molesta y coordinaremos el horario más conveniente para ti.</p></div></li>
+          <li class="paso"><div><h3>Te evaluamos</h3><p>Realizamos una evaluación profesional para conocer tus necesidades y explicarte las opciones de atención.</p></div></li>
+          <li class="paso"><div><h3>Iniciamos tu tratamiento</h3><p>Diseñamos un plan de atención adecuado para ti y te acompañamos durante todo el proceso.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIO DESTACADO ============ -->
+    <section class="seccion" style="padding-top:0" aria-label="Lo que dicen nuestros pacientes">
+      <div class="contenedor">
+        <div class="destacado-testimonio" data-reveal>
+          <span class="forma forma--turq" style="--t:12rem; top:-4rem; right:-3rem; opacity:.35" data-flota></span>
+          <span class="forma forma--coral" style="--t:5rem; bottom:-1.5rem; left:35%; opacity:.5" data-flota></span>
+          <span class="estrellas" data-estrellas="5"></span>
+          <blockquote>“Llegué con un dolor de espalda que no me dejaba trabajar. En pocas sesiones volví a mi rutina y además me enseñaron a cuidarme.”</blockquote>
+          <cite>Paciente de quiropraxia</cite>
+          <div class="grupo-botones">
+            <a class="boton" href="testimonios.html">Leer más opiniones <span data-icono="flecha"></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LLAMADA FINAL ============ -->
+    <section class="seccion" style="padding-top:0" aria-labelledby="cta-titulo">
+      <div class="contenedor">
+        <div class="cta-final" data-reveal>
+          <span class="forma forma--sol" style="--t:7rem; top:-2rem; left:-2rem" data-flota></span>
+          <span class="forma forma--blanca" style="--t:9rem; bottom:-3rem; right:-2rem" data-flota></span>
+          <h2 id="cta-titulo">Da el primer paso hacia una vida sin dolor</h2>
+          <p>Escríbenos y te respondemos con los horarios disponibles.</p>
+          <div class="grupo-botones">
+            <a class="boton boton--whatsapp" href="#" data-wa="Hola, quiero agendar una cita."><span data-icono="whatsapp"></span> Escribir por WhatsApp</a>
+            <a class="boton boton--marino" href="contacto.html">Ver cómo llegar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="pie"></div>
+</body>
+</html>

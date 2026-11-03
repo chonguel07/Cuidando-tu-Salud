@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto | Cuidando tu salud</title>
+  <meta name="description" content="Dirección, horarios, formulario y WhatsApp de Cuidando tu salud, policlínico de podología y quiropraxia.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <script src="js/config.js" defer></script>
+  <script src="js/components.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-pagina="contacto">
+
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <div id="cabecera"></div>
+
+  <main id="contenido">
+
+    <!-- ============ PORTADA ============ -->
+    <section class="pagina-hero pagina-hero--marea" aria-labelledby="titulo-pagina">
+      <span class="forma forma--blanca" style="--t:15rem; top:-6rem; right:-3rem" data-flota></span>
+      <span class="forma forma--sol" style="--t:4rem; bottom:24%; right:26%" data-flota></span>
+      <span class="forma forma--coral" style="--t:2.5rem; top:22%; right:44%" data-flota></span>
+
+      <div class="contenedor">
+        <div class="pagina-hero__contenido">
+          <nav class="migas" aria-label="Ruta" data-intro><a href="index.html">Inicio</a> <span aria-hidden="true">/</span> <span>Contacto</span></nav>
+          <h1 id="titulo-pagina" data-palabras>Hablemos de cómo ayudarte</h1>
+          <p data-intro>Escríbenos por WhatsApp, llena el formulario o visítanos. Te respondemos lo antes posible.</p>
+          <div class="grupo-botones" data-intro>
+            <a class="boton boton--whatsapp" href="#" data-wa="Hola, quiero agendar una cita."><span data-icono="whatsapp"></span> Escribir por WhatsApp</a>
+          </div>
+        </div>
+        <!-- IMAGEN DE LA PORTADA
+             Para cambiarla: reemplaza el archivo por otra imagen con el mismo nombre, o escribe el nombre
+             de tu foto en src="...". Tamaño recomendado: 1200 px de ancho (JPG o WebP, menos de 300 KB).
+             alt="..." describe la imagen. No borres data-intro-arte (es la animación de entrada).
+             El texto de la etiqueta flotante se cambia dentro de <span class="flotante ...">. -->
+        <div class="pagina-hero__arte" data-parallax="-5">
+          <img src="assets/images/portada.jpg" alt="Fachada del policlínico Cuidando tu salud" width="1200" height="900" data-intro-arte>
+          <span class="flotante pagina-hero__chip" data-flota><span data-icono="reloj"></span> Te esperamos</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DATOS Y FORMULARIO ============ -->
+    <section class="seccion seccion--ola" aria-label="Datos de contacto y formulario">
+      <div class="contenedor">
+        <div class="contacto-rejilla">
+
+          <!-- Los datos se editan en js/config.js -->
+          <div class="info-lista" data-reveal-grupo>
+            <article class="info-tarjeta">
+              <span class="info-tarjeta__icono" data-icono="pin"></span>
+              <div><h3>Dirección</h3><p data-sitio="direccion"></p></div>
+            </article>
+            <article class="info-tarjeta">
+              <span class="info-tarjeta__icono" data-icono="reloj"></span>
+              <div><h3>Horario</h3><ul data-horarios></ul></div>
+            </article>
+            <article class="info-tarjeta">
+              <span class="info-tarjeta__icono" data-icono="telefono"></span>
+              <div><h3>Teléfono</h3><p><a data-tel href="#"></a></p></div>
+            </article>
+
+            <!--<article class="info-tarjeta">
+              <span class="info-tarjeta__icono" data-icono="correo"></span>
+              <div><h3>Correo</h3><p><a data-mail href="#"></a></p></div>
+            </article>-->
+          </div>
+
+          <form class="formulario" data-formulario novalidate data-reveal>
+            <h2>Escríbenos</h2>
+            <p class="texto-suave" style="margin:0">Completa tus datos y se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+
+            <div class="campo">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+              <span class="campo__error" aria-live="polite"></span>
+            </div>
+
+            <div class="campo">
+              <label for="telefono">Teléfono</label>
+              <input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" required>
+              <span class="campo__error" aria-live="polite"></span>
+            </div>
+
+            <div class="campo">
+              <label for="servicio">¿Qué necesitas?</label>
+              <select id="servicio" name="servicio" required>
+                <option value="">Elige una opción</option>
+                <option>Podología</option>
+                <option>Quiropraxia</option>
+                <option>Productos</option>
+                <option>Otra consulta</option>
+              </select>
+              <span class="campo__error" aria-live="polite"></span>
+            </div>
+
+            <div class="campo">
+              <label for="mensaje">Cuéntanos qué te molesta (opcional)</label>
+              <textarea id="mensaje" name="mensaje"></textarea>
+              <span class="campo__error"></span>
+            </div>
+
+            <button class="boton boton--whatsapp boton--ancho" type="submit"><span data-icono="whatsapp"></span> Enviar por WhatsApp</button>
+            <p class="formulario__aviso" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ENVÍOS A PROVINCIA (SHALOM) ============ -->
+    <section class="seccion" style="padding-top:0" id="envios" aria-label="Envíos a provincia">
+      <div class="contenedor">
+        <div data-envios="contacto"></div>
+      </div>
+    </section>
+    <!-- ============ UBICACIÓN ============ -->
+    <section class="seccion" style="padding-top:0" aria-labelledby="mapa-titulo">
+      <div class="contenedor">
+        <div class="ubicacion" data-reveal>
+          <div class="ubicacion__info">
+            <span class="forma forma--sol" style="--t:6rem; top:-2rem; right:-2rem; opacity:.5" data-flota></span>
+            <div class="mapa__pin"><span data-icono="pin"></span></div>
+            <h2 id="mapa-titulo">Encuéntranos aquí</h2>
+            <p class="ubicacion__direccion" data-sitio="direccion"></p>
+            <ul class="ubicacion__horario" data-horarios aria-label="Horario de atención"></ul>
+            <a class="boton boton--claro" href="#" data-mapa>Abrir en Google Maps <span data-icono="flecha"></span></a>
+          </div>
+          <!-- El mapa se carga desde js/config.js (mapaIncrustado) -->
+          <div class="ubicacion__mapa" data-mapa-incrustado></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="pie"></div>
+</body>
+</html>

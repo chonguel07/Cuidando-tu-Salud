@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" width="240" height="180">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cde9fb"/><stop offset="1" stop-color="#d9f4f0"/></linearGradient></defs>
+<rect width="240" height="180" fill="url(#g)"/>
+<circle cx="208" cy="28" r="28" fill="#fff" opacity=".22"/>
+<circle cx="26" cy="152" r="36" fill="#fff" opacity=".18"/>
+<circle cx="120" cy="96" r="66" fill="#fff" opacity=".38"/>
+<ellipse cx="120" cy="44" rx="18" ry="8" fill="#2d9cdb"/><ellipse cx="120" cy="60" rx="20" ry="8" fill="#fff"/><ellipse cx="120" cy="76" rx="22" ry="8" fill="#2d9cdb"/><ellipse cx="120" cy="92" rx="24" ry="8" fill="#fff"/><ellipse cx="120" cy="108" rx="26" ry="8" fill="#2d9cdb"/><ellipse cx="120" cy="124" rx="28" ry="8" fill="#fff"/><rect x="52" y="86" width="40" height="24" rx="12" fill="#f4c3a1"/><rect x="148" y="86" width="40" height="24" rx="12" fill="#f4c3a1"/>
+<path d="M120 142l3 8l8 3l-8 3l-3 8l-3-8l-8-3l8-3z" fill="#ffc53d"/>
+</svg>

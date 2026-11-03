@@ -1,0 +1,160 @@
+/* ==========================================================================
+   Cuidando tu salud - Servicios (página servicios.html)
+   Índice:
+   1. Etiquetas de sección
+   2. Imágenes en "Qué podemos tratar"
+   3. Tratamientos y precios
+   4. Paquetes y ofertas del mes
+   5. Animaciones pausadas
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. ETIQUETAS DE SECCIÓN
+   ========================================================================== */
+.etiqueta-parte {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.3rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--marino);
+  border-radius: 999px;
+}
+.etiqueta-parte--oferta { background: var(--coral-osc); animation: latido-etiqueta 2.4s ease-in-out infinite; }
+@keyframes latido-etiqueta { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+
+
+/* ==========================================================================
+   2. IMÁGENES EN "QUÉ PODEMOS TRATAR"
+   ========================================================================== */
+.servicio-item { align-items: center; }
+.servicio-item__img {
+  width: 7rem;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: var(--sombra-chica);
+  transition: transform 0.5s var(--curva), box-shadow 0.4s;
+}
+.servicio-item:hover .servicio-item__img { transform: rotate(-3deg) scale(1.07); box-shadow: var(--sombra); }
+
+
+/* ==========================================================================
+   3. TRATAMIENTOS Y PRECIOS
+   ========================================================================== */
+.filtros.chips { justify-content: center; margin-bottom: 1rem; }
+.chip small { margin-left: 0.25rem; padding: 0.05rem 0.45rem; font-size: 0.75rem; font-weight: 800; color: var(--marino); background: var(--cielo); border-radius: 999px; }
+.chip[aria-pressed="true"] small { background: var(--sol); }
+.tienda__contador { margin: 0 0 1.5rem; text-align: center; font-weight: 700; color: var(--texto-suave); }
+
+.tratamientos { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); }
+.tratamiento {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  border-radius: var(--radio-grande);
+  box-shadow: var(--sombra-chica);
+  opacity: 0;
+  transition: transform 0.35s var(--curva), box-shadow 0.35s var(--curva);
+}
+.tratamiento.visible { opacity: 1; animation: entra 0.6s var(--curva) var(--retraso, 0ms) backwards; }
+.tratamiento:hover { transform: translateY(-8px); box-shadow: var(--sombra); }
+.tratamiento__imagen { position: relative; overflow: hidden; aspect-ratio: 4 / 3; }
+.tratamiento__imagen img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--curva); }
+.tratamiento:hover .tratamiento__imagen img { transform: scale(1.1) rotate(1.5deg); }
+.tratamiento__area {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  padding: 0.25rem 0.8rem;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: var(--marino);
+  background: #fff;
+  border-radius: 999px;
+  box-shadow: var(--sombra-chica);
+}
+.tratamiento__cuerpo { display: flex; flex: 1; flex-direction: column; gap: 0.6rem; align-items: flex-start; padding: 1.25rem 1.4rem 1.4rem; }
+.tratamiento__cuerpo h3 { margin: 0; font-size: 1.1875rem; }
+.tratamiento__cuerpo p { flex: 1; margin: 0; font-size: var(--texto-chico); color: var(--texto-suave); }
+.tratamiento__pie { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 0.75rem; width: 100%; margin-top: 0.5rem; padding-top: 0.9rem; border-top: 2px dashed var(--borde); }
+.tratamiento__precio { display: grid; line-height: 1.15; }
+.tratamiento__precio small { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--texto-suave); }
+.tratamiento__precio strong { font-family: var(--fuente-titulos); font-size: 1.625rem; color: var(--marino); }
+.tratamiento__precio span { display: inline-flex; align-items: center; gap: 0.3rem; margin-top: 0.2rem; font-size: 0.8125rem; font-weight: 600; color: var(--texto-suave); }
+.tratamiento__precio svg { width: 0.95rem; height: 0.95rem; }
+
+.aviso-terapias { display: flex; align-items: flex-start; gap: 0.75rem; max-width: 52rem; margin: 2.5rem auto 0; padding: 1rem 1.25rem; font-size: var(--texto-chico); color: var(--marino); background: #fff; border: 2px dashed var(--borde); border-radius: var(--radio); }
+.aviso-terapias > span { flex: none; color: var(--turquesa-osc); }
+.aviso-terapias svg { width: 1.5rem; height: 1.5rem; }
+
+
+/* ==========================================================================
+   4. PAQUETES Y OFERTAS DEL MES
+   ========================================================================== */
+.paquetes { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); }
+.paquete {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  align-items: flex-start;
+  padding: 1.75rem;
+  color: var(--marino);
+  border-radius: var(--radio-grande);
+  overflow: hidden;
+  opacity: 0;
+  transition: transform 0.35s var(--curva), box-shadow 0.35s var(--curva);
+}
+.paquete.visible { opacity: 1; animation: entra 0.6s var(--curva) var(--retraso, 0ms) backwards; }
+.paquete:hover { transform: translateY(-8px) rotate(-0.6deg); box-shadow: var(--sombra); }
+.paquete--marea { background: var(--grad-marea); }
+.paquete--sol { background: var(--grad-sol); }
+.paquete--noche { color: #fff; background: var(--grad-noche); }
+.paquete--aqua { background: var(--aqua); }
+.paquete--coral { background: #ffd2c9; }
+.paquete--cielo { background: #cde9fb; }
+.paquete h3 { position: relative; z-index: 2; margin: 0; font-size: 1.4rem; color: inherit; }
+.paquete > * { position: relative; z-index: 2; }
+.paquete__forma { position: absolute; z-index: 1; right: -2.5rem; bottom: -2.5rem; width: 9rem; height: 9rem; background: rgba(255, 255, 255, 0.3); border-radius: 50%; animation: flota-paquete 6s ease-in-out infinite; }
+@keyframes flota-paquete { 0%, 100% { translate: 0 0; } 50% { translate: -0.8rem -0.8rem; } }
+.paquete ul { display: grid; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.paquete li { display: flex; align-items: flex-start; gap: 0.5rem; font-weight: 600; font-size: var(--texto-chico); }
+.paquete li svg { flex: none; width: 1.2rem; height: 1.2rem; margin-top: 0.15rem; }
+.paquete__oferta { box-shadow: 0 4px 12px rgba(11, 43, 69, 0.18); }
+.paquete__oferta--simple::before { background: var(--turquesa); animation: none; }
+.paquete__precio { display: flex; align-items: center; gap: 0.9rem; margin-top: auto; padding-top: 0.5rem; }
+.paquete__precio > div { display: grid; line-height: 1.1; }
+.paquete__precio small { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.85; }
+.paquete__precio strong { font-family: var(--fuente-titulos); font-size: 2rem; }
+.paquete__precio s { font-size: 0.9375rem; opacity: 0.75; }
+.paquete__precio em { padding: 0.2rem 0.65rem; font-size: 0.875rem; font-weight: 800; font-style: normal; color: #fff; background: var(--coral-osc); border-radius: 999px; animation: latido-etiqueta 2.4s ease-in-out infinite; }
+.paquete__vigencia { display: flex; align-items: center; gap: 0.4rem; margin: 0; font-size: 0.8125rem; font-weight: 700; opacity: 0.9; }
+.paquete__vigencia svg { width: 1rem; height: 1rem; }
+
+
+/* ==========================================================================
+   Celulares
+   ========================================================================== */
+@media (max-width: 39.99rem) {
+  .servicio-item__img { width: 5.25rem; }
+  .tratamientos { grid-template-columns: minmax(0, 1fr); }
+}
+
+
+/* ==========================================================================
+   5. ANIMACIONES PAUSADAS (botón "Pausar animaciones")
+   ========================================================================== */
+html.sin-anim .tratamiento,
+html.sin-anim .paquete { opacity: 1; animation: none; transition: none; }
+html.sin-anim .tratamiento.visible,
+html.sin-anim .paquete.visible { animation: none; }
+html.sin-anim .etiqueta-parte--oferta,
+html.sin-anim .paquete__forma,
+html.sin-anim .paquete__precio em { animation: none; }
+html.sin-anim .servicio-item__img,
+html.sin-anim .tratamiento__imagen img { transition: none; }

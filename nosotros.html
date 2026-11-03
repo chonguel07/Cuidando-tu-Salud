@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nosotros | Cuidando tu salud</title>
+  <meta name="description" content="Conoce la historia, la misión, la visión y al equipo de profesionales de Cuidando tu salud, policlínico de podología y quiropraxia.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <script src="js/config.js" defer></script>
+  <script src="js/components.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-pagina="nosotros">
+
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <div id="cabecera"></div>
+
+  <main id="contenido">
+
+    <!-- ============ PORTADA ============ -->
+    <section class="pagina-hero pagina-hero--marea" aria-labelledby="titulo-pagina">
+      <span class="forma forma--blanca" style="--t:16rem; top:-6rem; right:-4rem" data-flota></span>
+      <span class="forma forma--sol" style="--t:4rem; bottom:24%; right:26%" data-flota></span>
+      <span class="forma forma--coral" style="--t:2.5rem; top:22%; right:44%" data-flota></span>
+
+      <div class="contenedor">
+        <div class="pagina-hero__contenido">
+          <nav class="migas" aria-label="Ruta" data-intro><a href="index.html">Inicio</a> <span aria-hidden="true">/</span> <span>Nosotros</span></nav>
+          <h1 id="titulo-pagina" data-palabras>Cuidamos tu salud desde una perspectiva integral</h1>
+          <p data-intro>Somos un equipo comprometido con tu bienestar, que integra podología y quiropraxia para brindarte una atención profesional y
+            personalizada. Trabajamos con dedicación, cercanía y responsabilidad, poniendo tu salud y calidad de vida en el centro de cada atención.</p>
+        </div>
+        <!-- IMAGEN DE LA PORTADA
+             Para cambiarla: reemplaza el archivo por otra imagen con el mismo nombre, o escribe el nombre
+             de tu foto en src="...". Tamaño recomendado: 1200 px de ancho (JPG o WebP, menos de 300 KB).
+             alt="..." describe la imagen. No borres data-intro-arte (es la animación de entrada).
+             El texto de la etiqueta flotante se cambia dentro de <span class="flotante ...">. -->
+        <div class="pagina-hero__arte" data-parallax="-5">
+          <img src="assets/images/portada.jpg" alt="Fachada del policlínico Cuidando tu salud" width="1200" height="900" data-intro-arte>
+          <span class="flotante pagina-hero__chip" data-flota><span data-icono="corazon"></span> Atención personalizada</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HISTORIA ============ -->
+    <section class="seccion seccion--ola" aria-labelledby="historia-titulo">
+      <div class="contenedor historia">
+        <div data-reveal>
+          <h2 id="historia-titulo">Nuestra historia</h2>
+          <!-- EDITAR: reemplaza estos textos y fechas con la historia real del policlínico -->
+          <p class="texto-grande" style="margin-top:1rem">
+            Empezamos con una convicción: cada paciente merece comprender el origen de sus molestias y recibir una atención adecuada a sus necesidades.
+          </p>
+          <p class="texto-suave">
+            Creemos en la importancia de abordar la salud de manera integral. Por eso, integramos podología y quiropraxia en un mismo espacio, combinando
+            conocimientos y atención especializada para cuidar tus pies, postura y columna. Nuestro compromiso es escucharte, orientarte y acompañarte en cada etapa de tu atención.
+          </p>
+        </div>
+
+        <div class="hitos" data-reveal-grupo>
+          <div class="hito">
+            <span class="hito__anio">2015</span>
+            <h3>Nace Cuidando tu salud</h3>
+            <p>Abrimos con un consultorio de podología y un compromiso: atención cercana.</p>
+          </div>
+          <div class="hito">
+            <span class="hito__anio">2016</span>
+            <h3>Sumamos quiropraxia</h3>
+            <p>Incorporamos quiroprácticos para tratar pies y columna de forma conjunta.</p>
+          </div>
+          <div class="hito">
+            <span class="hito__anio">2026</span>
+            <h3>Nuevo local y más equipo</h3>
+            <p>Ampliamos las instalaciones para atenderte con más comodidad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MISIÓN Y VISIÓN ============ -->
+    <section class="seccion beneficios-fondo seccion--ola" aria-label="Misión y visión">
+      <div class="contenedor">
+        <div class="mv" data-reveal-grupo>
+          <article class="mv__tarjeta mv__tarjeta--mision">
+            <h3>Misión</h3>
+            <p>Brindar atención integral y personalizada en podología y quiropraxia, contribuyendo al bienestar y la calidad de vida de nuestros pacientes
+              mediante evaluaciones profesionales, tratamientos adecuados y un trato cercano y humano.</p>
+          </article>
+          <article class="mv__tarjeta mv__tarjeta--vision">
+            <h3>Visión</h3>
+            <p>Consolidarnos como un policlínico referente en nuestra ciudad en el cuidado de los pies y la salud musculoesquelética, destacando por
+              nuestra calidad de atención, profesionalismo, confianza y compromiso con cada paciente.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VALORES ============ -->
+    <section class="seccion" aria-labelledby="valores-titulo">
+      <div class="contenedor">
+        <header class="seccion__cabecera seccion__cabecera--centro" data-reveal>
+          <h2 id="valores-titulo">Lo que nos guía</h2>
+        </header>
+        <div class="valores" data-reveal-grupo>
+          <article class="valor"><span data-icono="corazon"></span><h3>Cercanía</h3><p>Te escuchamos y te tratamos como nos gustaría que nos traten.</p></article>
+          <article class="valor"><span data-icono="escudo"></span><h3>Seguridad</h3><p>Material esterilizado y protocolos claros en cada consulta.</p></article>
+          <article class="valor"><span data-icono="objetivo"></span><h3>Honestidad</h3><p>Te decimos lo que necesitas, ni más ni menos.</p></article>
+          <article class="valor"><span data-icono="chispa"></span><h3>Mejora continua</h3><p>Nos capacitamos para ofrecerte mejores tratamientos.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EQUIPO ============ -->
+    <section class="seccion beneficios-fondo seccion--ola" aria-labelledby="equipo-titulo">
+      <div class="contenedor">
+        <header class="seccion__cabecera seccion__cabecera--centro" data-reveal>
+          <h2 id="equipo-titulo">Nuestros profesionales</h2>
+          <p class="texto-grande">Un equipo que trabaja en conjunto para cada paciente.</p>
+        </header>
+        <!-- EDITAR: nombres, cargos y descripciones de ejemplo; reemplázalos por los reales -->
+        <div class="equipo" data-reveal-grupo>
+          <article class="profesional" data-tilt>
+            <div class="avatar avatar--1" aria-hidden="true">AT</div>
+            <h3>Eva Vargas</h3>
+            <p class="profesional__rol">Quiropráctica y Podóloga</p>
+            <p>Profesional dedicada al cuidado integral de los pies y la columna, con experiencia en tratamientos podológicos, evaluación postural y atención personalizada.</p>
+          </article>
+          <article class="profesional" data-tilt>
+            <div class="avatar avatar--2" aria-hidden="true">LR</div>
+            <h3>Rosa Vargas</h3>
+            <p class="profesional__rol">Quiropráctica y Podóloga</p>
+            <p>Enfocada en la prevención, evaluación y cuidado de los pies y la columna, con un trato cercano y atención individualizada.</p>
+          </article>
+          <article class="profesional" data-tilt>
+            <div class="avatar avatar--3" aria-hidden="true">MQ</div>
+            <h3>Yenny</h3>
+            <p class="profesional__rol">Quiropráctica y Podóloga</p>
+            <p>Dedicada al cuidado de los pies y la salud de la columna, brindando atención personalizada y tratamientos orientados al bienestar de cada paciente.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LLAMADA FINAL ============ -->
+    <section class="seccion" aria-labelledby="cta-titulo">
+      <div class="contenedor">
+        <div class="cta-final" data-reveal>
+          <span class="forma forma--sol" style="--t:7rem; top:-2rem; left:-2rem" data-flota></span>
+          <span class="forma forma--blanca" style="--t:9rem; bottom:-3rem; right:-2rem" data-flota></span>
+          <h2 id="cta-titulo">Queremos conocerte</h2>
+          <p>Agenda tu primera consulta y cuéntanos cómo podemos ayudarte.</p>
+          <div class="grupo-botones">
+            <a class="boton boton--whatsapp" href="#" data-wa="Hola, quiero agendar una cita."><span data-icono="whatsapp"></span> Escribir por WhatsApp</a>
+            <a class="boton boton--marino" href="contacto.html">Ver contacto</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="pie"></div>
+</body>
+</html>

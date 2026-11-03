@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Servicios | Cuidando tu salud</title>
+  <meta name="description" content="Podología, quiropraxia y terapias holísticas: acupuntura, biomagnetismo, fisioterapia, electroterapia, masoterapia y más. Conoce tratamientos, paquetes y precios referenciales.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/servicios.css">
+
+  <script src="js/config.js" defer></script>
+  <script src="js/components.js" defer></script>
+  <script src="js/servicios-datos.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/servicios.js" defer></script>
+</head>
+<body data-pagina="servicios">
+
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <div id="cabecera"></div>
+
+  <main id="contenido">
+
+    <!-- ============ PORTADA ============ -->
+    <section class="pagina-hero" aria-labelledby="titulo-pagina">
+      <span class="forma forma--turq" style="--t:14rem; top:-5rem; right:-3rem; opacity:.55" data-flota></span>
+      <span class="forma forma--coral" style="--t:4rem; bottom:20%; right:22%" data-flota></span>
+      <span class="forma forma--sol" style="--t:2.5rem; top:18%; right:40%" data-flota></span>
+
+      <div class="contenedor">
+        <div class="pagina-hero__contenido">
+          <nav class="migas" aria-label="Ruta" data-intro><a href="index.html">Inicio</a> <span aria-hidden="true">/</span> <span>Servicios</span></nav>
+          <h1 id="titulo-pagina" data-palabras>Cuidamos tus pies y tu espalda</h1>
+          <p data-intro>Podología, quiropraxia y terapias holísticas para que te muevas sin dolor. Conoce cada tratamiento, para quién está pensado y cuánto cuesta.</p>
+          <div class="chips" data-intro>
+            <a class="boton boton--claro boton--chico" href="#podologia"><span data-icono="pie"></span> Podología</a>
+            <a class="boton boton--claro boton--chico" href="#quiropraxia"><span data-icono="columna"></span> Quiropraxia</a>
+            <a class="boton boton--claro boton--chico" href="#terapias"><span data-icono="hoja"></span> Terapias y precios</a>
+            <a class="boton boton--claro boton--chico" href="#paquetes-seccion"><span data-icono="premio"></span> Ofertas</a>
+          </div>
+        </div>
+        <!-- IMAGEN DE LA PORTADA
+             Para cambiarla: reemplaza el archivo por otra imagen con el mismo nombre, o escribe el nombre
+             de tu foto en src="...". Tamaño recomendado: 1200 px de ancho (JPG o WebP, menos de 300 KB).
+             alt="..." describe la imagen. No borres data-intro-arte (es la animación de entrada).
+             El texto de la etiqueta flotante se cambia dentro de <span class="flotante ...">. -->
+        <div class="pagina-hero__arte pagina-hero__arte--ilustracion" data-parallax="-5">
+          <img src="assets/images/servicios/quiropraxia.svg" alt="Ilustración de una columna vertebral con un ajuste quiropráctico" width="1200" height="900" data-intro-arte>
+          <span class="flotante pagina-hero__chip" data-flota><span data-icono="check"></span> Primera evaluación completa</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PARTE 1: QUÉ PODEMOS TRATAR ============ -->
+    <section class="seccion seccion--ola" id="tratar" aria-labelledby="tratar-titulo">
+      <div class="contenedor">
+        <header class="seccion__cabecera" data-reveal>
+          <span class="etiqueta-parte">Parte 1</span>
+          <h2 id="tratar-titulo">Qué podemos tratar</h2>
+          <p class="texto-grande">Reconoce tu molestia y descubre qué tratamiento te puede ayudar. Las imágenes son de muestra.</p>
+        </header>
+
+        <!-- EDITAR: las ilustraciones están en assets/images/servicios/. Para usar fotos reales, cambia la ruta de src. -->
+
+        <!-- Podología -->
+        <div class="bloque bloque--pies" id="podologia">
+          <div class="bloque__panel bloque__panel--pies" data-reveal>
+            <span class="forma forma--blanca" style="--t:12rem; bottom:-4rem; right:-4rem"></span>
+            <h2>Podología</h2>
+            <p>Cuidado clínico de tus pies. Desde un callo molesto hasta el control de un pie diabético, tratamos cada caso con delicadeza y explicándote cada paso.</p>
+            <a class="boton boton--marino" href="#" data-wa="Hola, quiero agendar una cita de podología.">Agendar podología <span data-icono="flecha"></span></a>
+            <a class="boton boton--borde-claro" href="explora.html#pie"><span data-icono="pie"></span> Ver el pie en 3D</a>
+          </div>
+
+          <div class="bloque__lista" data-reveal-grupo>
+            <article class="servicio-item">
+              <img class="servicio-item__img" src="assets/images/servicios/unaencarnada.jpeg" alt="Ilustración de una uña encarnada" width="240" height="180" loading="lazy">
+              <div>
+                <h3>Uñas encarnadas</h3>
+                <p>Tratamiento sin dolor y control hasta que la uña crezca bien.</p>
+                <span class="servicio-item__ideal">Ideal si hay dolor o enrojecimiento al costado de la uña</span>
+              </div>
+            </article>
+            <article class="servicio-item">
+              <img class="servicio-item__img" src="assets/images/servicios/juanete.jpg" alt="Ilustración de un juanete en el pie" width="240" height="180" loading="lazy">
+              <div>
+                <h3>Juanetes</h3>
+                <p>Valoración, protección y consejos de calzado para reducir la molestia.</p>
+                <span class="servicio-item__ideal">Ideal si te duele o roza la base del dedo gordo</span>
+              </div>
+            </article>
+            <article class="servicio-item">
+              <img class="servicio-item__img" src="assets/images/servicios/callos.jpg" alt="Ilustración de callos en la planta del pie" width="240" height="180" loading="lazy">
+              <div>
+                <h3>Callos y durezas</h3>
+                <p>Retiro seguro y consejos de calzado para que no vuelvan.</p>
+                <span class="servicio-item__ideal">Ideal si duele al caminar con zapatos</span>
+              </div>
+            </article>
+            <article class="servicio-item">
+              <img class="servicio-item__img" src="assets/images/servicios/hongouna.jpg" alt="Ilustración de una uña con hongos" width="240" height="180" loading="lazy">
+              <div>
+                <h3>Hongos en uñas y piel</h3>
+                <p>Diagnóstico y tratamiento según cada caso.</p>
+                <span class="servicio-item__ideal">Ideal si las uñas están amarillas, gruesas o quebradizas</span>
+              </div>
+            </article>
+            <article class="servicio-item">
+              <img class="servicio-item__img" src="assets/images/servicios/pie_diabetico.png" alt="Ilustración de un pie protegido, para el control del pie diabético" width="240" height="180" loading="lazy">
+              <div>
+                <h3>Pie diabético</h3>
+                <p>Revisión periódica para prevenir heridas y complicaciones.</p>
+                <span class="servicio-item__ideal">Ideal si tienes diabetes o mala circulación</span>
+              </div>
+            </article>
+            <article class="servicio-item">
+              <img class="servicio-item__img" src="assets/images/servicios/plantilla.jpg" alt="Ilustración de una plantilla ortopédica" width="240" height="180" loading="lazy">
+              <div>
+                <h3>Plantillas a medida</h3>
+                <p>Estudio de tu pisada y plantillas hechas para ti.</p>
+                <span class="servicio-item__ideal">Ideal si te duele el talón o el arco del pie</span>
+              </div>
+            </article>
+            <article class="servicio-item">
+              <img class="servicio-item__img" src="assets/images/servicios/adultomayorpie.jpg" alt="Ilustración de un pie con un corazón, cuidado de pies en adultos mayores" width="240" height="180" loading="lazy">
+              <div>
+                <h3>Cuidado de pies en adultos mayores</h3>
+                <p>Corte y cuidado de uñas con técnica segura y trato paciente.</p>
+                <span class="servicio-item__ideal">Ideal si ya no puedes cortarte las uñas con seguridad</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Quiropraxia -->
+        <div class="bloque bloque--espalda bloque--invertido" id="quiropraxia">
+          <div class="bloque__panel bloque__panel--espalda" data-reveal>
+            <span class="forma forma--coral" style="--t:10rem; top:-3rem; right:-3rem; opacity:.5"></span>
+            <h2>Quiropraxia</h2>
+            <p>Ajustes manuales suaves y un plan de ejercicios para aliviar el dolor, mejorar tu postura y devolverle movilidad a tu cuerpo.</p>
+            <a class="boton" href="#" data-wa="Hola, quiero agendar una cita de quiropraxia.">Agendar quiropraxia <span data-icono="flecha"></span></a>
+            <a class="boton boton--borde-claro" href="explora.html#columna"><span data-icono="columna"></span> Ver la columna en 3D</a>
+          </div>
+
+          <div class="bloque__lista" data-reveal-grupo>
+            <article class="servicio-item">
+              <img class="servicio-item__img" src="assets/images/servicios/espaldadolor.jpg" alt="Ilustración de una espalda con dolor en cuello y zona lumbar" width="240" height="180" loading="lazy">
+              <div>
+                <h3>Dolor de espalda y cuello</h3>
+                <p>Ajustes suaves y ejercicios para mantener el alivio.</p>
+                <span class="servicio-item__ideal">Ideal si el dolor aparece al trabajar o al dormir</span>
+              </div>
+            </article>
+            <article class="servicio-item">
+              <img class="servicio-item__img" src="assets/images/servicios/dolorlumbar.jpg" alt="Ilustración de la columna y un dolor que baja por la pierna, ciática" width="240" height="180" loading="lazy">
+              <div>
+                <h3>Ciática y dolor lumbar</h3>
+                <p>Evaluamos la causa y armamos un plan de tratamiento.</p>
+                <span class="servicio-item__ideal">Ideal si el dolor baja hacia la pierna</span>
+              </div>
+            </article>
+            <article class="servicio-item">
+              <img class="servicio-item__img" src="assets/images/servicios/dolorcabeza.jpg" alt="Ilustración de una cabeza con dolor, dolor de cabeza por tensión" width="240" height="180" loading="lazy">
+              <div>
+                <h3>Dolores de cabeza por tensión</h3>
+                <p>Trabajo sobre cuello y hombros para reducir la frecuencia.</p>
+                <span class="servicio-item__ideal">Ideal si la cabeza duele tras muchas horas frente a la pantalla</span>
+              </div>
+            </article>
+            <article class="servicio-item">
+              <img class="servicio-item__img" src="assets/images/servicios/malapostura.jpg" alt="Ilustración comparando una postura encorvada con una postura recta" width="240" height="180" loading="lazy">
+              <div>
+                <h3>Postura y trabajo de oficina</h3>
+                <p>Corrección postural y pautas sencillas para tu día a día.</p>
+                <span class="servicio-item__ideal">Ideal si pasas horas sentado</span>
+              </div>
+            </article>
+            <article class="servicio-item">
+              <img class="servicio-item__img" src="assets/images/servicios/lesiondeportiva.jpg" alt="Ilustración de una persona corriendo, lesiones deportivas" width="240" height="180" loading="lazy">
+              <div>
+                <h3>Lesiones deportivas</h3>
+                <p>Recuperación y prevención para que vuelvas a entrenar.</p>
+                <span class="servicio-item__ideal">Ideal si entrenas y sientes molestias que no se van</span>
+              </div>
+            </article>
+            <article class="servicio-item">
+              <img class="servicio-item__img" src="assets/images/servicios/rigidez.jpg" alt="Ilustración de una cabeza con flechas de giro, rigidez de cuello" width="240" height="180" loading="lazy">
+              <div>
+                <h3>Rigidez y falta de movilidad</h3>
+                <p>Recuperamos rango de movimiento con técnicas suaves.</p>
+                <span class="servicio-item__ideal">Ideal si te cuesta agacharte o girar el cuello</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PARTE 2: TRATAMIENTOS Y PRECIOS ============ -->
+    <!-- EDITAR: los tratamientos y precios se cambian en js/servicios-datos.js -->
+    <section class="seccion beneficios-fondo seccion--ola" id="terapias" aria-labelledby="terapias-titulo">
+      <div class="contenedor">
+        <header class="seccion__cabecera seccion__cabecera--centro" data-reveal>
+          <span class="etiqueta-parte">Parte 2</span>
+          <h2 id="terapias-titulo">Tratamientos y precios</h2>
+          <p class="texto-grande">Podología y terapias holísticas. Los precios son referenciales: el valor final se confirma después de tu evaluación.</p>
+        </header>
+
+        <div class="filtros chips" id="filtros-tratamientos" role="group" aria-label="Filtrar por especialidad"></div>
+        <p class="tienda__contador" id="contador-tratamientos" aria-live="polite"></p>
+
+        <div class="tratamientos" id="tratamientos"></div>
+
+        <p class="aviso-terapias">
+          <span data-icono="escudo"></span>
+          Las terapias complementarias no reemplazan el diagnóstico ni el tratamiento médico. Si tienes una condición de salud, consulta también con tu médico.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ PAQUETES Y OFERTAS DEL MES ============ -->
+    <section class="seccion" id="paquetes-seccion" aria-labelledby="paquetes-titulo">
+      <div class="contenedor">
+        <header class="seccion__cabecera seccion__cabecera--centro" data-reveal>
+          <span class="etiqueta-parte etiqueta-parte--oferta">Ofertas del mes</span>
+          <h2 id="paquetes-titulo">Paquetes para cuidarte más y pagar menos</h2>
+          <p class="texto-grande">Ofertas vigentes: <strong id="vigencia-ofertas"></strong>. Cupos limitados.</p>
+        </header>
+        <div class="paquetes" id="paquetes"></div>
+      </div>
+    </section>
+    <!-- ============ PRIMERA CONSULTA ============ -->
+    <section class="seccion beneficios-fondo seccion--ola" aria-labelledby="consulta-titulo">
+      <div class="contenedor">
+        <header class="seccion__cabecera seccion__cabecera--centro" data-reveal>
+          <h2 id="consulta-titulo">Tu primera consulta</h2>
+          <p class="texto-grande">Un espacio para conocer tu caso, evaluar tus necesidades y brindarte una orientación profesional y personalizada.</p>
+        </header>
+        <div class="consulta" data-reveal-grupo>
+          <div class="consulta__item"><strong>Conversación</strong><p>Escuchamos tus molestias, conocemos tus antecedentes y comprendemos cómo afectan tu bienestar.</p></div>
+          <div class="consulta__item"><strong>Evaluación integral</strong><p>Examinamos tus pies, postura y columna para identificar tus necesidades de atención.</p></div>
+          <div class="consulta__item"><strong>Orientación personalizada</strong><p>Te explicamos los resultados de la evaluación y las alternativas de atención más adecuadas para tu caso.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PREGUNTAS FRECUENTES ============ -->
+    <section class="seccion" aria-labelledby="faq-titulo">
+      <div class="contenedor" style="max-width:52rem">
+        <header class="seccion__cabecera seccion__cabecera--centro" data-reveal>
+          <h2 id="faq-titulo">Preguntas frecuentes</h2>
+        </header>
+        <div class="faq" data-reveal-grupo>
+          <details>
+            <summary>¿Duelen los tratamientos?</summary>
+            <div class="faq__cuerpo">Trabajamos con técnicas suaves y avisamos antes de cada paso. Si algo te molesta, lo ajustamos al momento.</div>
+          </details>
+          <details>
+            <summary>¿Cuánto dura la primera consulta?</summary>
+            <div class="faq__cuerpo">Depende de tu caso, pero reservamos tiempo suficiente para conversar, evaluarte y explicarte tu plan.</div>
+          </details>
+          <details>
+            <summary>¿Necesito orden médica?</summary>
+            <div class="faq__cuerpo">No es obligatoria para tu primera consulta. Si tienes estudios o informes anteriores, tráelos: nos ayudan mucho.</div>
+          </details>
+          <details>
+            <summary>¿Cuántas sesiones voy a necesitar?</summary>
+            <div class="faq__cuerpo">Cada persona es distinta. Después de evaluarte te diremos cuántas sesiones se recomiendan y cada cuánto.</div>
+          </details>
+          <details>
+            <summary>¿Por qué los precios dicen “desde”?</summary>
+            <div class="faq__cuerpo">Cada caso es distinto: el número de sesiones y los materiales dependen de tu evaluación. El “desde” es el valor mínimo; te confirmamos el precio exacto antes de empezar.</div>
+          </details>
+          <details>
+            <summary>¿Qué debo llevar a mi cita?</summary>
+            <div class="faq__cuerpo">Ropa cómoda y, si vienes por los pies, el calzado que usas habitualmente. Nos permite ver cómo pisas.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LLAMADA FINAL ============ -->
+    <section class="seccion" style="padding-top:0" aria-labelledby="cta-titulo">
+      <div class="contenedor">
+        <div class="cta-final" data-reveal>
+          <span class="forma forma--sol" style="--t:7rem; top:-2rem; left:-2rem" data-flota></span>
+          <span class="forma forma--blanca" style="--t:9rem; bottom:-3rem; right:-2rem" data-flota></span>
+          <h2 id="cta-titulo">¿No sabes por dónde empezar?</h2>
+          <p>Cuéntanos qué te molesta y te orientamos sin compromiso.</p>
+          <div class="grupo-botones">
+            <a class="boton boton--whatsapp" href="#" data-wa="Hola, quiero que me orienten sobre qué servicio necesito."><span data-icono="whatsapp"></span> Escribir por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="pie"></div>
+</body>
+</html>

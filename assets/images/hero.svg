@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 600" role="img" aria-labelledby="t">
+  <title id="t">Ilustración de una columna vertebral y una huella de pie</title>
+  <defs>
+    <linearGradient id="marea" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0fb5a8"/><stop offset="1" stop-color="#2d9cdb"/></linearGradient>
+    <linearGradient id="noche" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#145a7a"/><stop offset="1" stop-color="#0b2b45"/></linearGradient>
+    <linearGradient id="sol" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff6f59"/><stop offset="1" stop-color="#ffc53d"/></linearGradient>
+  </defs>
+  <!-- Fondo orgánico -->
+  <path d="M70 190C60 90 170 24 285 34c120 10 210 84 212 196 2 100-48 142-82 212-40 82-112 138-206 124C86 548 80 420 74 330z" fill="url(#marea)"/>
+  <path d="M120 200c0-64 70-110 160-104 90 6 150 52 150 130 0 76-40 110-62 170-30 76-92 106-150 92-70-16-98-90-98-170z" fill="#fff" opacity=".16"/>
+  <!-- Elementos decorativos -->
+  <circle cx="486" cy="104" r="40" fill="url(#sol)"/>
+  <circle cx="62" cy="498" r="26" fill="#ff6f59"/>
+  <circle cx="512" cy="330" r="12" fill="#fff" opacity=".7"/>
+  <circle cx="40" cy="250" r="9" fill="#ffc53d"/>
+  <!-- Médula -->
+  <path d="M255 110c14 28 24 54 27 82-5 28-16 54-30 82-13 28-21 54-21 82 0 28 12 54 34 82" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".6"/>
+  <!-- Vértebras -->
+  <g fill="url(#noche)">
+    <ellipse cx="255"   cy="110" rx="24" ry="10"/>
+    <ellipse cx="269"   cy="138" rx="26" ry="10.5"/>
+    <ellipse cx="279"   cy="166" rx="28" ry="11"/>
+    <ellipse cx="282"   cy="194" rx="30" ry="11.5"/>
+    <ellipse cx="277"   cy="222" rx="32" ry="12"/>
+    <ellipse cx="266"   cy="250" rx="34" ry="12.5"/>
+    <ellipse cx="252"   cy="278" rx="35" ry="13"/>
+    <ellipse cx="239"   cy="306" rx="37" ry="13.5"/>
+    <ellipse cx="231"   cy="334" rx="38" ry="14"/>
+    <ellipse cx="237"   cy="390" rx="41" ry="14.5"/>
+    <ellipse cx="250"   cy="418" rx="43" ry="15"/>
+    <ellipse cx="265"   cy="446" rx="45" ry="15.5"/>
+  </g>
+  <!-- Vértebra destacada -->
+  <ellipse cx="231" cy="362" rx="39" ry="14" fill="url(#sol)"/>
+  <circle cx="231" cy="362" r="34" fill="none" stroke="#ffc53d" stroke-width="3" opacity=".7"/>
+  <circle cx="231" cy="362" r="48" fill="none" stroke="#fff" stroke-width="2" opacity=".35"/>
+  <!-- Huella de pie -->
+  <g fill="url(#sol)">
+    <path d="M388 440c-26 6-38 38-32 72 6 32 26 46 50 40 26-6 32-36 26-64-6-32-20-54-44-48z"/>
+    <ellipse cx="404" cy="404" rx="12" ry="15"/>
+    <ellipse cx="434" cy="410" rx="9.500" ry="12.500"/>
+    <ellipse cx="458" cy="423" rx="8" ry="11"/>
+    <ellipse cx="472" cy="441" rx="6.500" ry="9.500"/>
+    <ellipse cx="380" cy="411" rx="9" ry="12"/>
+  </g>
+</svg>
